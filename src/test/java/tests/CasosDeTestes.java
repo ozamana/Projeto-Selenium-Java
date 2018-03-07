@@ -21,7 +21,7 @@ public class CasosDeTestes {
 	@Test
 	public void testRealizarPesquisa() {
 		try {
-			paginaInicialFuncionalidade.realizandoPesquisa("Celular");
+			paginaInicialFuncionalidade.realizandoPesquisa("TV 4K");
 			retornoPesquisaFuncionalidade.imprimindoResultadosGrid(5);
 			retornoPesquisaFuncionalidade.realizaPaginacao("2");
 		} catch (Exception e) {
