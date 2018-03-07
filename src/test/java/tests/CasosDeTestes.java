@@ -15,7 +15,7 @@ public class CasosDeTestes {
 		try {
 			paginaInicialFuncionalidade.goToAcess();
 			paginaInicialFuncionalidade.isPaginaInicial();
-			paginaInicialFuncionalidade.realizandoPesquisa("TV 4K");
+			paginaInicialFuncionalidade.realizandoPesquisa("SMART TV 4K");
 			retornoPesquisaFuncionalidade.imprimindoResultadosGrid(5);
 			retornoPesquisaFuncionalidade.realizaPaginacao("2");
 			paginaInicialFuncionalidade.tearDown();
