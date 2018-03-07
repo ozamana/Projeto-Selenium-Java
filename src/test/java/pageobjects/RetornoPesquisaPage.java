@@ -15,7 +15,7 @@ public class RetornoPesquisaPage extends Page {
 	public List<WebElement> getGridResultadosBusca() {
 		List<WebElement> listaElementos = null;
 		try {
-			listaElementos = driver.findElements(By.xpath(".//ol[@id = 'searchResults']//li//a"));
+			listaElementos = driver.findElements(By.xpath(".//*[contains(@class, 'results-item article grid')]"));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -25,7 +25,7 @@ public class RetornoPesquisaPage extends Page {
 	public WebElement getTituloProduto(WebElement elemento) {
 		WebElement tituloProduto = null;
 		try {
-			tituloProduto = elemento.findElement(By.xpath("//h2//span"));
+			tituloProduto = elemento.findElement(By.xpath(".//*[contains(@class, 'item__title list-view-item-title')]")); 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -35,7 +35,7 @@ public class RetornoPesquisaPage extends Page {
 	public WebElement getValorProduto(WebElement elemento) {
 		WebElement elementoValorProduto = null;
 		try {
-			elementoValorProduto = elemento.findElement(By.xpath("//div[contains(@class, 'item__price')]//span[2]"));
+			elementoValorProduto = elemento.findElement(By.xpath(".//*[contains(@class, 'item__price')]"));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
