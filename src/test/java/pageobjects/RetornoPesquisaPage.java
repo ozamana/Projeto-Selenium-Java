@@ -15,7 +15,7 @@ public class RetornoPesquisaPage extends Page {
 	public List<WebElement> getGridResultadosBusca() {
 		List<WebElement> listaElementos = null;
 		try {
-			listaElementos = driver.findElements(By.xpath(".//*[contains(@class, 'results-item article grid')]"));
+			listaElementos = driver.findElements(By.xpath(".//*[contains(@class, 'results-item article')]"));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

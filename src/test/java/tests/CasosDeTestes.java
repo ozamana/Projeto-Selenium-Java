@@ -1,5 +1,7 @@
 package tests;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import funcionalidades.PaginaInicialFuncionalidade;
@@ -9,18 +11,26 @@ public class CasosDeTestes {
 
 	PaginaInicialFuncionalidade paginaInicialFuncionalidade = new PaginaInicialFuncionalidade();
 	RetornoPesquisaFuncionalidade retornoPesquisaFuncionalidade = new RetornoPesquisaFuncionalidade();
-
+	
+	@Before
+	public void setup(){
+		paginaInicialFuncionalidade.goToAcess();
+		paginaInicialFuncionalidade.isPaginaInicial();		
+	}
+	
 	@Test
-	public void realizarPesquisa() {
+	public void testRealizarPesquisa() {
 		try {
-			paginaInicialFuncionalidade.goToAcess();
-			paginaInicialFuncionalidade.isPaginaInicial();
-			paginaInicialFuncionalidade.realizandoPesquisa("TV");
+			paginaInicialFuncionalidade.realizandoPesquisa("Celular");
 			retornoPesquisaFuncionalidade.imprimindoResultadosGrid(5);
 			retornoPesquisaFuncionalidade.realizaPaginacao("2");
-			paginaInicialFuncionalidade.tearDown();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	@After
+	public void quit(){
+		paginaInicialFuncionalidade.tearDown();
 	}
 }
