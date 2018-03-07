@@ -1,1 +1,19 @@
 /target/
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# PNG
+*.png
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+*.project
