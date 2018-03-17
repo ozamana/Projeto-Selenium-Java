@@ -8,29 +8,28 @@ import funcionalidades.PaginaInicialFuncionalidade;
 import funcionalidades.RetornoPesquisaFuncionalidade;
 
 public class CasosDeTestes {
-
 	PaginaInicialFuncionalidade paginaInicialFuncionalidade = new PaginaInicialFuncionalidade();
 	RetornoPesquisaFuncionalidade retornoPesquisaFuncionalidade = new RetornoPesquisaFuncionalidade();
-	
+
 	@Before
-	public void setup(){
+	public void setup() {
 		paginaInicialFuncionalidade.goToAcess();
-		paginaInicialFuncionalidade.isPaginaInicial();		
+		paginaInicialFuncionalidade.isPaginaInicial();
 	}
-	
+
 	@Test
 	public void testRealizarPesquisa() {
 		try {
-			paginaInicialFuncionalidade.realizandoPesquisa("TV 4K");
+			paginaInicialFuncionalidade.realizandoPesquisa("tv 4k");
 			retornoPesquisaFuncionalidade.imprimindoResultadosGrid(5);
 			retornoPesquisaFuncionalidade.realizaPaginacao("2");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	@After
-	public void quit(){
+	public void quit() {
 		paginaInicialFuncionalidade.tearDown();
 	}
 }
